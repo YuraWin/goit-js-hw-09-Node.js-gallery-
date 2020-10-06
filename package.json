@@ -1,0 +1,24 @@
+{
+  "name": "goit-js-hw-09-node.js-gallery-",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gallery-items.js",
+  "scripts": {
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuraWin/goit-js-hw-09-Node.js-gallery-.git"
+  },
+  "author": "Yuriy <yurawin@ukr.net>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YuraWin/goit-js-hw-09-Node.js-gallery-/issues"
+  },
+  "homepage": "https://github.com/YuraWin/goit-js-hw-09-Node.js-gallery-#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  }
+}

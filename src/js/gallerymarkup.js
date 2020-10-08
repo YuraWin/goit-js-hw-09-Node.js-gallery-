@@ -1,7 +1,7 @@
 export const createGalleryMarkup = function (source) {
-    return source
-        .map(({ preview, original, description }) => {
-            return `
+  return source
+    .map(({ preview, original, description }) => {
+      return `
        <li class="gallery__item">
      <a
        class="gallery__link"
@@ -15,6 +15,6 @@ export const createGalleryMarkup = function (source) {
        />
      </a>
        </li>`;
-        })
-        .join('');
-}
+    })
+    .join('');
+};

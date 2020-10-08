@@ -1,5 +1,5 @@
+import srcGallery from './gallery-items.js';
 import { createGalleryMarkup } from './gallerymarkup';
-import srcGallery from './gallery-items';
 const galleryMarkup = createGalleryMarkup(srcGallery);
 
 const galleryContainer = document.querySelector('.js-gallery');
@@ -13,39 +13,38 @@ galleryContainer.addEventListener('click', onFotoGalleryClick);
 closeBtn.addEventListener('click', onCloseModalContainer);
 areaOverlay.addEventListener('click', onCloseModalContainer);
 
-
 function onFotoGalleryClick(evt) {
-    evt.preventDefault();
-    const clickElement = evt.target;
-    if (!clickElement.classList.contains('gallery__image')) return;
+  evt.preventDefault();
+  const clickElement = evt.target;
+  if (!clickElement.classList.contains('gallery__image')) return;
 
-    const urlImage = clickElement.dataset.source;
-    const altDescription = clickElement.getAttribute('alt');
+  const urlImage = clickElement.dataset.source;
+  const altDescription = clickElement.getAttribute('alt');
 
-    openModalContainer();
-    openImage(urlImage, altDescription);
-    addKeyEventListener();
+  openModalContainer();
+  openImage(urlImage, altDescription);
+  addKeyEventListener();
 
-    function openModalContainer() {
-        modalContainer.classList.add('is-open');
-    }
-    function openImage(src, alt) {
-        image.src = src;
-        image.alt = alt;
-    }
-    function addKeyEventListener() {
-        window.addEventListener('keydown', onEscPress);
-    }
+  function openModalContainer() {
+    modalContainer.classList.add('is-open');
+  }
+  function openImage(src, alt) {
+    image.src = src;
+    image.alt = alt;
+  }
+  function addKeyEventListener() {
+    window.addEventListener('keydown', onEscPress);
+  }
 }
 
 function onEscPress(evt) {
-    if (evt.code !== 'Escape') return;
-    onCloseModalContainer();
+  if (evt.code !== 'Escape') return;
+  onCloseModalContainer();
 }
 
 function onCloseModalContainer() {
-    modalContainer.classList.remove('is-open');
-    window.removeEventListener('keydown', onEscPress);
-    image.src = '';
-    image.alt = '';
+  modalContainer.classList.remove('is-open');
+  window.removeEventListener('keydown', onEscPress);
+  image.src = '';
+  image.alt = '';
 }
